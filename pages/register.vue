@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import ErrorField from '../components/util/ErrorField'
 
 export default {
@@ -75,8 +74,8 @@ export default {
   },
   methods: {
     submit() {
-      axios
-        .post('http://localhost:8000/api/register', this.form)
+      this.$axios
+        .$post('http://localhost:8000/api/register', this.form)
         .then((res) => {
           // this.$router.push('/login')
         })
