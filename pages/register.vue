@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-300">
     <div class="flex justify-center">
       <div class="rounded border shadow-sm p-4 my-12 w-4/12 bg-white">
-        <h1 class="text-center text-2xl font-semibold">Create Account</h1>
+        <h1 class="text-center text-2xl font-semibold">Register Yourself</h1>
         <form
           class="justify-center w-full flex flex-wrap"
           @submit.prevent="submit"

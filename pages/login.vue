@@ -42,8 +42,8 @@
 import ErrorField from '../components/util/ErrorField'
 
 export default {
-  middleware: 'guest',
   components: { ErrorField },
+  middleware: 'guest',
   data() {
     return {
       form: {
@@ -59,6 +59,8 @@ export default {
         .$post('http://localhost:8000/api/login', this.form)
         .then((res) => {
           this.$cookies.set('token', res)
+          this.$store.commit('setLogin')
+          this.$axios.defaults.headers.common.authorization = `Bearer ${res}`
           this.$router.push('/')
         })
         .catch((e) => (this.errors = e.response.data.errors))
